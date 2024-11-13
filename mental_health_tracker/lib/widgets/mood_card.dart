@@ -1,5 +1,6 @@
 import 'package:mental_health_tracker/screens/moodentry_form.dart';
 import 'package:flutter/material.dart';
+import 'package:mental_health_tracker/screens/list_moodentry.dart';
 
 class ItemHomepage {
      final String name;
@@ -10,9 +11,7 @@ class ItemHomepage {
 
 class ItemCard extends StatelessWidget {
   // Menampilkan kartu dengan ikon dan nama.
-
   final ItemHomepage item; 
-  
   const ItemCard(this.item, {super.key}); 
 
   @override
@@ -38,6 +37,12 @@ class ItemCard extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) => const MoodEntryFormPage(),
               ),
+            );
+          } else if (item.name == "Lihat Mood"){
+            Navigator.push(context,
+              MaterialPageRoute(
+                builder: (context) => const MoodEntryPage()
+                ),
             );
           }
         },
